@@ -93,9 +93,11 @@ PYTODO_HOME = PYTODO_HOME.replace('\\','/')
 PYTODO_LIST = PYTODO_LIST.replace('\\','/')
 
 # GLOBALS
-log.debug('\nOperating System: ' + OS_TYPE 
-    + '\nPytodo Home: ' + PYTODO_HOME 
-    + '\nPytodo List: ' + PYTODO_LIST + '\n')
+list_array = []
+
+# log.debug('\nOperating System: ' + OS_TYPE 
+#     + '\nPytodo Home: ' + PYTODO_HOME 
+    # + '\nPytodo List: ' + PYTODO_LIST + '\n')
 
 ## Check for a good environment
 _check_create(PYTODO_HOME,'directory')
@@ -103,4 +105,17 @@ _check_create(PYTODO_HOME,'directory')
 ## Check for the list
 _check_create(PYTODO_LIST,'file')
 
-	
+## Generate list array
+with open(PYTODO_LIST) as listFile:
+    list_array = [list_array.rstrip('\n') for list_array in open(PYTODO_LIST)]
+
+log.debug('\nProgram complete to this line.\n')
+
+log.debug('\nBegin testing\n')
+
+if len(list_array) > 0:
+    print('\nIndex: ' + str(list_array.index(list_array[1]) + 1) + '\nItem: ' + list_array[1])
+
+print('\n' + str(list_array[len(list_array) - 1]))
+
+log.debug('\nEnd testing\n')
