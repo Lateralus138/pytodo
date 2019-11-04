@@ -1,4 +1,12 @@
 #!/usr/bin/env python3
+####################################################
+# This is my first serious attempt at anything in  #
+# Python. I will build the basic framework and re- #
+# factor, reorganize, and optimize as this program #
+# progresses and I learn more about the language.  #
+# I'm a Python noob at this point though I've been #
+# programming a long time.                         #
+####################################################
 import os, sys
 
 # FUNCTIONS
@@ -86,8 +94,8 @@ PYTODO_LIST = PYTODO_LIST.replace('\\','/')
 
 # GLOBALS
 log.debug('\nOperating System: ' + OS_TYPE 
-    + '\nPython Home: ' + PYTODO_HOME 
-    + '\nPython List: ' + PYTODO_LIST + '\n')
+    + '\nPytodo Home: ' + PYTODO_HOME 
+    + '\nPytodo List: ' + PYTODO_LIST + '\n')
 
 ## Check for a good environment
 _check_create(PYTODO_HOME,'directory')
